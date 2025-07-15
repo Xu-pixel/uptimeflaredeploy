@@ -5,9 +5,9 @@ const pageConfig: PageConfig = {
   title: "实验室页面监控",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
-    { link: 'https://dok.d.agriai.cc/', label: 'dokploy' },
-    { link: 'https://agriai.cc/#/', label: 'agriai-model' },
-    { link: 'https://baixiao.shennong.cc/', label: 'shennong', highlight: true },
+    // { link: 'https://dok.d.agriai.cc/', label: 'dokploy' },
+    // { link: 'https://agriai.cc/#/', label: 'agriai-model' },
+    // { link: 'https://baixiao.shennong.cc/', label: 'shennong', highlight: true },
   ],
   // [OPTIONAL] Group your monitors
   // If not specified, all monitors will be shown in a single list
@@ -73,6 +73,20 @@ const workerConfig: WorkerConfig = {
       target: '1.2.3.4:22',
       tooltip: 'My production server SSH',
       statusPageLink: 'https://example.com',
+      timeout: 5000,
+    },
+    {
+      id: 'dokploy',
+      name: '组内dokploy',
+      method: 'GET',
+      target: 'https://dok.d.agriai.cc',
+      timeout: 5000,
+    },
+    {
+      id: 'shennong',
+      name: '百晓页面',
+      method: 'GET',
+      target: 'https://baixiao.shennong.cc',
       timeout: 5000,
     },
   ],
